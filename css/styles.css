@@ -15,3 +15,45 @@ www.color-hex.com/color-palette/61955
 .header {
 	color: #9a8c98;
 }
+
+.main-title {
+	color: #22223b;
+	float: left;
+}
+
+.main-subtitle {
+	color :	#4a4e69;
+	float: right;
+}
+
+.main-header {
+	background-color: #f2e9e4;
+}
+
+.tab-prop {
+	background-color: white;
+}
+
+
+.p1 {
+	padding-top: 15px;
+}
+
+.content {
+	background-color: white;
+}
+
+.page-border {
+	height: 2px;
+	background-color: #4a4e69;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+		margin-top: 0px;
+}
