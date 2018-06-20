@@ -16,6 +16,13 @@ db = MySQLdb.connect(host="localhost",
 
 cur = db.cursor()
 
-print "Didn't break\n"
+print "Didn't break part 1\n"
 
 db.close()
+
+
+log = open('/home/pi/workspace/testingSuite/resources/log.txt', 'a')
+first = log.readline()
+log.close()
+
+print first
