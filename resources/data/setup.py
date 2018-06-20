@@ -21,7 +21,7 @@ print "Didn't break part 1\n"
 db.close()
 
 
-log = open('/home/pi/workspace/testingSuite/resources/log.txt', 'a')
+log = open('home/pi/workspace/testingSuite/resources/log.txt', 'a')
 first = log.readline()
 log.close()
 
