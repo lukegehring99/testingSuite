@@ -13,6 +13,16 @@
 
 
 import MySQLdb
+import datetime
+time = datetime.datetime.now()
+log = open('/home/pi/workspace/testingSuite/resources/log.txt', 'r+')
+
+while log.readline() != "":
+    pass
+
+log.write("Test")
+
+
 
 db = MySQLdb.connect(host="localhost",
                      user="root",
@@ -28,7 +38,7 @@ print "Didn't break part 1\n"
 db.close()
 
 
-log = open('/home/pi/workspace/testingSuite/resources/log.txt', 'r')
+
 
 first = log.read()
 
