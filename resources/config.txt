@@ -1,0 +1,5 @@
+# Algorithm analysis data
+internal : resultsData
+
+# External data
+external : sourceData
