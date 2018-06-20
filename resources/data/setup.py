@@ -9,11 +9,13 @@
 
 import MySQLdb
 
-db = MySQLdb.commect(host="localhost",
+db = MySQLdb.connect(host="localhost",
                      user="root",
                      passwd="password",
                      db="test")
 
 cur = db.cursor()
+
+print "Didn't break\n"
 
 db.close()
