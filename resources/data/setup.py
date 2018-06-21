@@ -62,4 +62,3 @@ except:
 db2.close()
 
 target.close()
-log.close()
