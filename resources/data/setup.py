@@ -36,9 +36,6 @@ for line in target:
         external = str(line)[11:-1]
 
 
-print internal
-print external
-
 # Connect to the local data database
 try:
     db1 = MySQLdb.connect(host="localhost",
@@ -58,7 +55,7 @@ db1.close()
 try:
     db2 = MySQLdb.connect(host="localhost",
                           user="root",
-                          passwd="password"
+                          passwd="password",
                           db=external)
 
     cur2 = db2.cursor()
@@ -73,7 +70,4 @@ except:
 db2.close()
 
 target.close()
-
-
-
 log.close()
