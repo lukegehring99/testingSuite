@@ -13,16 +13,10 @@
 
 
 import MySQLdb
-import datetime
 import log_data
 
-log = open('/home/pi/workspace/testingSuite/resources/log.txt', 'r+')
 target = open('/home/pi/workspace/testingSuite/resources/config.txt', 'r')
 
-while log.readline() != "":
-    pass
-
-log.write(str(datetime.datetime.now())[0:-7] + "  : Server Starting\n")
 log_data.log("Server starting")
 
 internal = ""
@@ -44,7 +38,6 @@ try:
                           db=internal)
     cur1 = db1.cursor()
 except:
-    log.write(str(datetime.datetime.now())[0:-7] + "  : Failed to connect to internal data database\n")
     log_data.log("Failed to connect to internal data database")
 
 # Oh good now you have my password for a local SQL server, its about as useful as having a key to a locked chest across the world, might be useful but probably not
@@ -60,7 +53,6 @@ try:
 
     cur2 = db2.cursor()
 except:
-    log.write(str(datetime.datetime.now())[0:-7] + "  : Failed to connect to external data database\n")
     log_data.log("Failed to connect to external data database")
 
 
