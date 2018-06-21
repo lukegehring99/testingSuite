@@ -14,7 +14,7 @@
 
 import MySQLdb
 import datetime
-
+import log_data
 
 log = open('/home/pi/workspace/testingSuite/resources/log.txt', 'r+')
 target = open('/home/pi/workspace/testingSuite/resources/config.txt', 'r')
@@ -22,7 +22,8 @@ target = open('/home/pi/workspace/testingSuite/resources/config.txt', 'r')
 while log.readline() != "":
     pass
 
-log.write(str(datetime.datetime.now())[0:6] + "  : Server Starting\n")
+log.write(str(datetime.datetime.now())[0:-7] + "  : Server Starting\n")
+log_data.log("Server starting")
 
 internal = ""
 external = ""
@@ -30,32 +31,49 @@ external = ""
 # Fine database names
 for line in target:
     if "internal" in line:
-        internal = str(line)[11:]
+        internal = str(line)[11:-1]
     elif "external" in line:
-        external = str(line)[11:]
+        external = str(line)[11:-1]
 
-    line = target.readline()
 
 print internal
 print external
 
-# Connect to the local database
+# Connect to the local data database
 try:
-    db = MySQLdb.connect(host="localhost",
-                        user="root",
-                        passwd="password",
-                        db="test")
-    cur = db.cursor()
+    db1 = MySQLdb.connect(host="localhost",
+                          user="root",
+                          passwd="password",
+                          db=internal)
+    cur1 = db1.cursor()
 except:
-    log.write(str(datetime.datetime.now())[0:6] + "  : Failed to connect to internal database\n")
+    log.write(str(datetime.datetime.now())[0:-7] + "  : Failed to connect to internal data database\n")
+    log_data.log("Failed to connect to internal data database")
 
 # Oh good now you have my password for a local SQL server, its about as useful as having a key to a locked chest across the world, might be useful but probably not
 
+db1.close()
+
+# Connect to the outside data database
+try:
+    db2 = MySQLdb.connect(host="localhost",
+                          user="root",
+                          passwd="password"
+                          db=external)
+
+    cur2 = db2.cursor()
+except:
+    log.write(str(datetime.datetime.now())[0:-7] + "  : Failed to connect to external data database\n")
+    log_data.log("Failed to connect to external data database")
 
 
-db.close()
 
+# Check for the appropiate tables from sources.txt
 
+db2.close()
 
 target.close()
+
+
+
 log.close()
