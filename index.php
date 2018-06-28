@@ -43,18 +43,41 @@
   	<div class="tab-content tab-prop">
     	<div id="system" class="tab-pane fade in active">
       	<h3>System</h3>
+
+				Display IP address --php
+				Display main log file (Refresh button) --js
+				Display user log file  --js
+				Link to monitor page --html
+
+				<?php
+
+					$ip = $_SERVER['HTTP_CLIENT_IP'];
+					echo $ip;
+
+				?>
+
     	</div>
     	<div id="run" class="tab-pane fade">
       	<h3>Run</h3>
+				Upload file, parse
+				On parse completion, download file to server
+				Proceed to new page with dropdowns for testing uptions
     	</div>
     	<div id="results" class="tab-pane fade">
       	<h3>Results</h3>
+				Display general data for past results
+				Get this data from results folder
     	</div>
     	<div id="data" class="tab-pane fade">
       	<h3>Data</h3>
+				Show where data is being drawn from, give edit and remove buttons. Require password
+				Link to another page where the data can be viewed better
     	</div>
 			<div id="edit" class="tab-pane fade">
       	<h3>Edit</h3>
+				Bunch of dropdowns and fields to edit data input
+				Test function to test if the source is good
+				Use php to then edit the sources text, update list
     	</div>
   	</div>
 	</div>
@@ -62,3 +85,7 @@
 
 </body>
 </html>
+
+<?php
+
+?>
