@@ -51,7 +51,7 @@
 
 				<?php
 
-					$ip = $_SERVER['HTTP_CLIENT_IP'];
+					$ip = $_SERVER['REMOTE_ADDR'];
 					echo $ip;
 
 				?>
@@ -78,6 +78,7 @@
 				Bunch of dropdowns and fields to edit data input
 				Test function to test if the source is good
 				Use php to then edit the sources text, update list
+				Use ajax to send data to the json file
     	</div>
   	</div>
 	</div>
