@@ -79,6 +79,12 @@
 				Test function to test if the source is good
 				Use php to then edit the sources text, update list
 				Use ajax to send data to the json file
+
+				Dropdown for all current places data is being pulled from (every entry in sources.json)
+					Then tailored editing field for each data with a save button that requires a code
+				Place for new data to be inputted
+					Tests and then writes to sources.json
+
     	</div>
   	</div>
 	</div>

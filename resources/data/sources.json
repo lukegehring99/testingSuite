@@ -1,0 +1,21 @@
+[
+  {
+    "description": "Single Asset Type Here",
+    "source": "cryptocompare",
+    "rate": 45000,
+    "start": "Some number that denotes the start of the data",
+    "endpoints":
+    [
+        {
+          "type": "hist",
+          "description": "About this endpoint",
+          "refresh": 60,
+          "time": 60000,
+          "endpoint": ["https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&toTs=", "&limit=1000"],
+          "param": ["end time"],
+          "data": "Data;|time,close,high,low,open,volumefrom,volumeto|"
+        }
+    ]
+  }
+
+]
