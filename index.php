@@ -62,6 +62,7 @@
 				Upload file, parse
 				On parse completion, download file to server
 				Proceed to new page with dropdowns for testing uptions
+				<a href="monitor/ServerMonitor/main.php">System Monitor</a>
     	</div>
     	<div id="results" class="tab-pane fade">
       	<h3>Results</h3>
