@@ -16,7 +16,7 @@
   <?php
   for($i = 0; $i < 20; $i++) {
     $load = sys_getloadavg();
-    echo $load."    ";
+    echo implode(" ", $load)."    ";
   }
 
 
