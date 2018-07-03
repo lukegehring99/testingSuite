@@ -58,18 +58,36 @@
 					$ip = $_SERVER['REMOTE_ADDR'];
 					echo "<br>".$ip."<br>";
 
+					$handle = fopen("resources/log.txt", 'a') or die('Cannot open log file');
+					$data = "\n".$ip;
+					fwrite($handle, $data);
+					fclose($handle);
+
 				?>
 
 				<div class="doc-display">
 					<?php
-						echo file_get_contents("resources/log.txt");
+						$file = fopen("resources/log.txt", "r");
+						$counter = 1;
+						if($file) {
+							while (($line = fgets($handle)) !== false) {
+								if($counter < 10) {
+									echo "00".$counter . " :  " . $line;
+								} elseif($counter < 100) {
+									echo "0".$counter . " :  " . $line;
+								} else() {
+									echo $counter . " :  " . $line;
+								}
+								$counter++;
 
-						echo "<br>";
-						echo 'Current script owner: '. get_current_user() . "<br>";
-						echo $_SERVER['REMOTE_ADDR']."<br>";
-            echo $_SERVER['HTTP_USER_AGENT']."<br>";
-						echo $_SERVER['HTTP_REFERER']."<br>";
+							}
 
+							fclose($handle);
+						}
+						else {
+							echo "Error opening file";
+						}
+						//echo file_get_contents("resources/log.txt");
 					?>
 				</div>
 

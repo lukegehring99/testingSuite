@@ -61,9 +61,15 @@ hr {
 }
 
 .doc-display {
-	border-radius:
-	padding: 60px;
-	background: #b5bfce;
+	border-radius: 10px;
+	padding: 10px;
+	padding-left: 15px
+	background: #dee0e2;
 	height: 150px;
+	margin: 30px;
+	max-width: 850px;
+	max-height: 400px
+
+	overflow-y: scroll;
 
 }
