@@ -70,7 +70,7 @@
 						$file = fopen("resources/log.txt", "r");
 						$counter = 1;
 						if($file) {
-							while (($line = fgets($handle)) !== false) {
+							while (($line = fgets($file)) !== false) {
 								if($counter < 10) {
 									echo "00".$counter . " :  " . $line;
 								} elseif($counter < 100) {
@@ -82,7 +82,7 @@
 
 							}
 
-							fclose($handle);
+							fclose($file);
 						}
 						else {
 							echo "Error opening file";
