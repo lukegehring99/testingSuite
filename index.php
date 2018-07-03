@@ -43,26 +43,43 @@
   	<div class="tab-content tab-prop">
     	<div id="system" class="tab-pane fade in active">
       	<h3>System</h3>
+				<p>
+					Display IP address --php
+					Display main log file (Refresh button) --js
+					Display user log file  --js
+					Link to monitor page --html
 
-				Display IP address --php
-				Display main log file (Refresh button) --js
-				Display user log file  --js
-				Link to monitor page --html
+				</p>
+
+				<a href="monitor/ServerMonitor/main.php">System Monitor</a>
 
 				<?php
 
 					$ip = $_SERVER['REMOTE_ADDR'];
-					echo $ip;
+					echo "<br>".$ip."<br>";
 
 				?>
 
+				<div class="doc-display">
+					<?php
+						echo file_get_contents("resources/log.txt");
+
+						echo "<br>";
+						echo '<pre>';
+						echo print_r($_SERVER);
+						echo '</pre>';
+
+					?>
+				</div>
+
     	</div>
+
     	<div id="run" class="tab-pane fade">
       	<h3>Run</h3>
 				Upload file, parse
 				On parse completion, download file to server
 				Proceed to new page with dropdowns for testing uptions
-				<a href="monitor/ServerMonitor/main.php">System Monitor</a>
+
     	</div>
     	<div id="results" class="tab-pane fade">
       	<h3>Results</h3>
