@@ -75,7 +75,7 @@
 									echo "00".$counter . " :  " . $line;
 								} elseif($counter < 100) {
 									echo "0".$counter . " :  " . $line;
-								} else() {
+								} else {
 									echo $counter . " :  " . $line;
 								}
 								$counter++;

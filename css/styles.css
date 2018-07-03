@@ -63,12 +63,12 @@ hr {
 .doc-display {
 	border-radius: 10px;
 	padding: 10px;
-	padding-left: 15px
+	padding-left: 15px;
 	background: #dee0e2;
 	height: 150px;
 	margin: 30px;
 	max-width: 850px;
-	max-height: 400px
+	max-height: 400px;
 
 	overflow-y: scroll;
 
