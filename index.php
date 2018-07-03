@@ -51,7 +51,7 @@
 
 				</p>
 
-				<a href="monitor/ServerMonitor/main.php">System Monitor</a>
+				<a href="monitor/ServerMonitor/">System Monitor</a>
 
 				<?php
 
@@ -65,9 +65,10 @@
 						echo file_get_contents("resources/log.txt");
 
 						echo "<br>";
-						echo '<pre>';
-						echo print_r($_SERVER);
-						echo '</pre>';
+						echo 'Current script owner: '. get_current_user() . "<br>";
+						echo $_SERVER['REMOTE_ADDR']."<br>";
+            echo $_SERVER['HTTP_USER_AGENT']."<br>";
+						echo $_SERVER['HTTP_REFERER']."<br>";
 
 					?>
 				</div>

@@ -61,6 +61,9 @@ hr {
 }
 
 .doc-display {
-	margin: 30px;
-	padding: 10px;
+	border-radius:
+	padding: 60px;
+	background: #b5bfce;
+	height: 150px;
+
 }
