@@ -1,1 +1,5 @@
 monitor/
+resources/.htaccess
+resources/.htpasswd
+resources/access.txt
+resources/data/log_data.pyc
