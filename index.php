@@ -42,20 +42,18 @@
 
   	<div class="tab-content tab-prop">
     	<div id="system" class="tab-pane fade in active">
-      	<h3>System</h3>
 				<strong>
-					Leave this site now, if you touch anything I will know you did it. -Luke
+					Leave this site now, if you touch anything I will know you did it.  --Luke
 				</strong>
-				<p>
-					Display user log file  --js
-				</p>
+
 
 				<a href="monitor/ServerMonitor/">System Monitor</a>
+				<br>
 
 				<?php
 
 					$ip = $_SERVER['REMOTE_ADDR'];
-					echo "<br> Your IP address is: ".$ip."<br>";
+					echo "<br> Beginning wireshark packet interception on: ".$ip."<br>";
 
 				?>
 

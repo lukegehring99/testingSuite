@@ -71,5 +71,6 @@ hr {
 	max-height: 400px;
 
 	overflow-y: scroll;
+	font-family: Consolas, monaco, monospace;
 
 }
