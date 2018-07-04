@@ -43,12 +43,11 @@
   	<div class="tab-content tab-prop">
     	<div id="system" class="tab-pane fade in active">
       	<h3>System</h3>
+				<strong>
+					Leave this site now, if you touch anything I will know you did it. -Luke
+				</strong>
 				<p>
-					Display IP address --php
-					Display main log file (Refresh button) --js
 					Display user log file  --js
-					Link to monitor page --html
-
 				</p>
 
 				<a href="monitor/ServerMonitor/">System Monitor</a>
@@ -56,27 +55,34 @@
 				<?php
 
 					$ip = $_SERVER['REMOTE_ADDR'];
-					echo "<br>".$ip."<br>";
-
-					$handle = fopen("resources/log.txt", 'a') or die('Cannot open log file');
-					$data = "\n".$ip;
-					fwrite($handle, $data);
-					fclose($handle);
+					echo "<br> Your IP address is: ".$ip."<br>";
 
 				?>
 
 				<div class="doc-display">
 					<?php
+
+						//ini_set('display_errors', 1);
+						//error_reporting(E_ALL);
+						$ip = $_SERVER['REMOTE_ADDR'];
+
+						$handle = fopen("resources/log.txt", 'a') or die('Cannot open log file');
+						$data = date("Y-m-d G:i:s")." : ".$ip." connected\n";
+						fwrite($handle, $data);
+						fclose($handle);
+
 						$file = fopen("resources/log.txt", "r");
 						$counter = 1;
 						if($file) {
 							while (($line = fgets($file)) !== false) {
 								if($counter < 10) {
-									echo "00".$counter . " :  " . $line;
+									echo "000".$counter . " :  " . $line ."<br>";
 								} elseif($counter < 100) {
-									echo "0".$counter . " :  " . $line;
+									echo "00".$counter . " :  " . $line ."<br>";
+								} elseif($counter < 1000) {
+									echo "0".$counter . " :  " . $line ."<br>";
 								} else {
-									echo $counter . " :  " . $line;
+									echo $counter . " :  " . $line ."<br>";
 								}
 								$counter++;
 
