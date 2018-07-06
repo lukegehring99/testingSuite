@@ -123,7 +123,7 @@
 					<li class="active"><a data-toggle="tab" href="#newsource">Add new source</a></li>
 	    		<li><a data-toggle="tab" href="#editsource">Edit sources</a></li>
 				</ul>
-				<div id="newsource" class="tab-pane fade show active">
+				<div id="newsource" class="tab-pane fade in active">
 					<form>
 						<div class="form-group">
     					<label for="apiurl">API Endpoint URL</label>

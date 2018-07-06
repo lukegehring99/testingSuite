@@ -1,16 +1,16 @@
-function addVariable {
+function addVariable() {
 
 }
 
-function addField {
+function addField() {
 
 }
 
-function removeVariable {
+function removeVariable() {
 
 }
 
-function removeField {
+function removeField() {
 
 }
 
