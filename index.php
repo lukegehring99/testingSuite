@@ -129,8 +129,11 @@
     					<label for="apiurl">API Endpoint URL</label>
     					<input type="text" class="form-control" id="apiurl" placeholder="Full Address Here">
   					</div>
-						<button type="submit" class="btn btn-primary" onclick="getAPI()">Submit</button>
+						<button type="button" class="btn btn-primary" onclick="getAPI()">Submit</button>
 					</form>
+					<div id="response-display">
+
+					</div>
 				</div>
 				<div id="editsource" class="tab-pane fade">
 
