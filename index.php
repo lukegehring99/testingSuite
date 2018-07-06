@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+	<script src="js/parse.js"></script>
 
 	<style>
 	body {
@@ -117,6 +118,24 @@
     	</div>
 			<div id="edit" class="tab-pane fade">
       	<h3>Edit</h3>
+
+				<ul class="nav nav-pills">
+					<li class="active"><a data-toggle="tab" href="#newsource">Add new source</a></li>
+	    		<li><a data-toggle="tab" href="#editsource">Edit sources</a></li>
+				</ul>
+				<div id="newsource" class="tab-pane fade show active">
+					<form>
+						<div class="form-group">
+    					<label for="apiurl">API Endpoint URL</label>
+    					<input type="text" class="form-control" id="apiurl" placeholder="Full Address Here">
+  					</div>
+						<button type="submit" class="btn btn-primary" onclick="getAPI()">Submit</button>
+					</form>
+				</div>
+				<div id="editsource" class="tab-pane fade">
+
+				</div>
+				<p>
 				Bunch of dropdowns and fields to edit data input
 				Test function to test if the source is good
 				Use php to then edit the sources text, update list
@@ -126,6 +145,7 @@
 					Then tailored editing field for each data with a save button that requires a code
 				Place for new data to be inputted
 					Tests and then writes to sources.json
+				</p>
 
     	</div>
   	</div>
