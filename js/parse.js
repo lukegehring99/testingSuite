@@ -21,7 +21,7 @@ function getAPI() {
   $.getJSON(url, function(results) {
     $.each(results, function(key, val) {
       console.log(key + "  "  +  results.key);
-    }
+    });
     return 0;
   });
   alert('URL is invalid');
