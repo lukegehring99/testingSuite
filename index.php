@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
 	<script src="js/parse.js"></script>
-
+	<script src="js/main.js"></script>
 	<style>
 	body {
 	    /*background-color: #f2e9e4;*/
@@ -126,7 +126,7 @@
 				</ul>
 				<div id="newsource" class="tab-pane fade in active">
 					<form>
-						<div class="form-group">
+						<div class="form-group input-control">
     					<label for="apiurl">API Endpoint URL</label>
     					<input type="text" class="form-control" id="apiurl" placeholder="Full Address Here">
   					</div>

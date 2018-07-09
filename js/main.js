@@ -1,3 +1,5 @@
 function toggleDisplay(id) {
-    document.getElementById(id).classList.toggle("show");
+    var unid = id + "list";
+    //alert(unid);
+    document.getElementById(unid).classList.toggle("show");
 }

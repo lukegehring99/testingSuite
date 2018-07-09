@@ -16,15 +16,19 @@ function removeField() {
 
 function validUrl(url) {
   url = url.replace(/\s/g, '');
-  return url == '';
+  return !(url == '');
 }
 
 var counter = 0;
 
 function getAPI() {
   document.getElementById('response-display').innerHTML = "";
+  counter = 0;
   var sourceUrl = document.getElementById('apiurl').value;
 
+  console.log("called");
+  console.log(sourceUrl);
+  console.log(validUrl(sourceUrl));
   if (validUrl(sourceUrl)){
     $.ajax({
       url: sourceUrl,
@@ -37,6 +41,7 @@ function getAPI() {
           }
         }
         */
+	console.log("success function called");
         processEntry(null, data, document.getElementById('response-display'));
         // potentially change this to a single call top processEntry with key=null and value=data
       }
@@ -54,30 +59,40 @@ function processEntry(key, value, parent) {
     case "string":
     case "number":
     case "boolean":
-      diplayField(key, value, parent);
+      displayField(key, value, parent);
       break;
     case "object":
       if (Array.isArray(value)) {
         displayArray(key, value, parent);
       } else {
+
+        // Create the dropdown button element
+        var select = document.createElement("button");
+        select.classList.add("dropfield");
+        var unid = "field" + counter;
+        counter++;
+        select.id = unid;
+        select.onclick = function(){toggleDisplay(this.id);};
+        if(!(key == null)) {
+          select.innerHTML = key;
+        } else {
+          select.innerHTML = "root";
+        }
+        parent.appendChild(select);
+
+
+	// Create the element to store the content
+        var place = document.createElement("div");
+        place.classList.add("dropdown-content");
+        place.id = unid + "list";
+
+        parent.appendChild(place);
+
+
         for(var key1 in value) {
-          // Create the dropdown button element
-          var select = document.createElement("button");
-          select.class = "dropfield";
-          var unid = "field" + coutner;
-          counter++;
-          select.id = unid;
-          select.onclick = "toggleDisplay(" + unid + ")";
-          if(!(key == null)) {
-            select.innerHTML = key;
-          } else {
-            select.innerHTML = "root";
-          }
-          parent.appendChild(select);
-
-
-          if(data.hasOwnProperty(key1)) {
-            processEntry(key1, value[key1], select)
+          if(value.hasOwnProperty(key1)) {
+            console.log(key1)
+            processEntry(key1, value[key1], place)
           }
         }
       }
@@ -93,6 +108,7 @@ function displayField(key, value, parent) {
   var box = document.createElement("td");
   var check = document.createElement("input");
 
+  check.classList.add("selection-box");
   check.type = "checkbox";
   val.innerHTML = key + "  : " + value;
 

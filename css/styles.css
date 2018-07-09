@@ -76,28 +76,31 @@ hr {
 }
 
 .dropfield {
-	background-color: #4CAF50;
+	background-color: #337ab7;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
 	min-width: 230px;
+        width: 100%;
 }
 
 .dropfield:hover {
-	background-color: #3e8e41;
+	background-color: #2e6da4;
 }
 
 
 .dropdown {
 	position: relative;
 	display: inline-block;
+        width: 600px;
+        padding-top: 20px;
 }
 
 .dropdown-content {
 	display: none;
-	position: absolute;
+	position: relative;
   background-color: #f6f6f6;
   min-width: 230px;
   overflow: auto;
@@ -111,9 +114,27 @@ hr {
   text-decoration: none;
   display: block;
 }
-
+/*
 .dropdown-content li:hover, ul:hover {
 	background-color: #ddd;
 }
-
+*/
 .show {display: block}
+
+.input-control {
+	padding-top: 15px;
+}
+
+
+.selection-box {
+	float: right;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	padding-right: 10px;
+	padding-left: 10px;
+}
