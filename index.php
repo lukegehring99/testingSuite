@@ -137,7 +137,9 @@
 					</div>
 				</div>
 				<div id="editsource" class="tab-pane fade">
-
+					<div>
+						This is some example text
+					</div>
 				</div>
 				<p>
 				Bunch of dropdowns and fields to edit data input

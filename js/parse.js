@@ -1,3 +1,6 @@
+var keys;
+var identifiers;
+
 function addVariable() {
 
 }
@@ -22,6 +25,10 @@ function validUrl(url) {
 var counter = 0;
 
 function getAPI() {
+
+  keys = [];
+  identifiers = [];
+
   document.getElementById('response-display').innerHTML = "";
   counter = 0;
   var sourceUrl = document.getElementById('apiurl').value;
@@ -41,8 +48,9 @@ function getAPI() {
           }
         }
         */
-	console.log("success function called");
-        processEntry(null, data, document.getElementById('response-display'));
+	//console.log("success function called");
+      processEntry("", null, data, document.getElementById('response-display'));
+      console.log(keys);
         // potentially change this to a single call top processEntry with key=null and value=data
       }
     });
@@ -53,17 +61,18 @@ function getAPI() {
 }
 
 
-function processEntry(key, value, parent) {
+function processEntry(selector, key, value, parent) {
+
   var type = typeof(value);
   switch(type) {
     case "string":
     case "number":
     case "boolean":
-      displayField(key, value, parent);
+      displayField(selector, key, value, parent);
       break;
     case "object":
       if (Array.isArray(value)) {
-        displayArray(key, value, parent);
+        displayArray(selector, key, value, parent);
       } else {
 
         // Create the dropdown button element
@@ -81,7 +90,7 @@ function processEntry(key, value, parent) {
         parent.appendChild(select);
 
 
-	// Create the element to store the content
+	      // Create the element to store the content
         var place = document.createElement("div");
         place.classList.add("dropdown-content");
         place.id = unid + "list";
@@ -92,7 +101,17 @@ function processEntry(key, value, parent) {
         for(var key1 in value) {
           if(value.hasOwnProperty(key1)) {
             console.log(key1)
-            processEntry(key1, value[key1], place)
+
+            // Set up the identifier key
+            var active;
+            if(selector == "") {
+              active = key1;
+            }
+            else {
+              active = selector + ":" + key1;
+            }
+
+            processEntry(active, key1, value[key1], place)
           }
         }
       }
@@ -100,7 +119,7 @@ function processEntry(key, value, parent) {
   }
 }
 
-function displayField(key, value, parent) {
+function displayField(id, key, value, parent) {
 
   var table = document.createElement("table");
   var tr = document.createElement("tr");
@@ -117,11 +136,13 @@ function displayField(key, value, parent) {
   tr.appendChild(box);
   table.appendChild(tr);
   parent.appendChild(table);
+  keys.push(key);
+  identifiers.push(id);
 }
 
-function displayArray(key, value, parent) {
+function displayArray(id, key, value, parent) {
   if(value.length > 0) {
     key = "[" + key +"]";
-    processEntry(key, value[0], parent);
+    processEntry(id, key, value[0], parent);
   }
 }

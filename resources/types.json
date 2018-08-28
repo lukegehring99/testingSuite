@@ -1,0 +1,9 @@
+{
+  "realtime": ["time", "data"],
+
+  "historical":
+  {
+    "array": ["time", "data"],
+    "no_array": ["start_time", "length", "data"]
+  }
+}
