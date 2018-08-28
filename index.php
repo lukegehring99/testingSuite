@@ -124,21 +124,37 @@
 					<li class="active"><a data-toggle="tab" href="#newsource">Add new source</a></li>
 	    		<li><a data-toggle="tab" href="#editsource">Edit sources</a></li>
 				</ul>
-				<div id="newsource" class="tab-pane fade in active">
-					<form>
-						<div class="form-group input-control">
-    					<label for="apiurl">API Endpoint URL</label>
-    					<input type="text" class="form-control" id="apiurl" placeholder="Full Address Here">
-  					</div>
-						<button type="button" class="btn btn-primary" onclick="getAPI()">Submit</button>
-					</form>
-					<div id="response-display" class="dropdown">
+				<div class="tab-content tab-prop">
+					<div id="newsource" class="tab-pane fade in active">
+						<form>
+							<div class="form-group input-control">
+    						<label for="apiurl">API Endpoint URL</label>
+    						<input type="text" class="form-control" id="apiurl" placeholder="Full Address Here">
+  						</div>
+							<button type="button" class="btn btn-primary" onclick="getAPI()">Submit</button>
+						</form>
+						<div id="response-display" class="dropdown">
 
+						</div>
+						<div>
+							<p>Variable key</p>
+							<select>
+								<option value="1">This</option>
+								<option value="2">is</option>
+								<option value="3">where</option>
+								<option value="4">all</option>
+								<option value="5">types</option>
+								<option value="6">will</option>
+								<option value="7">be</option>
+							</select>
+							<input type="text" name="Name"><br>
+
+						</div>
 					</div>
-				</div>
-				<div id="editsource" class="tab-pane fade">
-					<div>
-						This is some example text
+					<div id="editsource" class="tab-pane fade">
+						<div>
+							This is some example text
+						</div>
 					</div>
 				</div>
 				<p>

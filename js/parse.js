@@ -51,6 +51,7 @@ function getAPI() {
 	//console.log("success function called");
       processEntry("", null, data, document.getElementById('response-display'));
       console.log(keys);
+      console.log(identifiers);
         // potentially change this to a single call top processEntry with key=null and value=data
       }
     });
